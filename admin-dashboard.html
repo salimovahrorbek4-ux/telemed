@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="admin-sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>TeleMed<strong>UZ</strong></span>
+            <span class="admin-badge">ADMIN</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="sidebar-link active"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="admin-doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="admin-patients.html" class="sidebar-link"><i class="fas fa-users"></i> Bemorlar</a>
+            <a href="admin-appointments.html" class="sidebar-link"><i class="fas fa-calendar-alt"></i> Uchrashuvlar <span class="sidebar-badge">5</span></a>
+            <div class="sidebar-section">Tizim</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-chart-bar"></i> Hisobotlar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-bell"></i> Bildirishnomalar <span class="sidebar-badge">3</span></a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user-shield"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Admin</div><div class="sidebar-user-role">Super Admin</div></div>
+            <a href="admin-login.html" style="color:rgba(255,255,255,0.4);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="admin-topbar">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Xush kelibsiz! TeleMed UZ boshqaruv paneli</p>
+            </div>
+            <div class="admin-topbar-actions">
+                <div class="btn-icon"><i class="fas fa-search"></i></div>
+                <div class="btn-icon"><i class="fas fa-bell"></i><span class="notif-dot"></span></div>
+                <div class="btn-icon"><i class="fas fa-expand"></i></div>
+            </div>
+        </div>
+
+        <div style="padding: 28px 32px;">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card stat-blue">
+                    <div class="admin-stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="admin-stat-value">52,847</div>
+                    <div class="admin-stat-label">Jami bemorlar</div>
+                    <div class="admin-stat-change up"><i class="fas fa-arrow-up"></i> 12.5% o'tgan oyga nisbatan</div>
+                </div>
+                <div class="admin-stat-card stat-green">
+                    <div class="admin-stat-icon"><i class="fas fa-user-md"></i></div>
+                    <div class="admin-stat-value">523</div>
+                    <div class="admin-stat-label">Faol shifokorlar</div>
+                    <div class="admin-stat-change up"><i class="fas fa-arrow-up"></i> 8.3% o'tgan oyga nisbatan</div>
+                </div>
+                <div class="admin-stat-card stat-orange">
+                    <div class="admin-stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="admin-stat-value">1,284</div>
+                    <div class="admin-stat-label">Bu oydagi uchrashuvlar</div>
+                    <div class="admin-stat-change up"><i class="fas fa-arrow-up"></i> 23.1% o'tgan oyga nisbatan</div>
+                </div>
+                <div class="admin-stat-card stat-purple">
+                    <div class="admin-stat-icon"><i class="fas fa-coins"></i></div>
+                    <div class="admin-stat-value">48.2M</div>
+                    <div class="admin-stat-label">Oylik daromad (so'm)</div>
+                    <div class="admin-stat-change up"><i class="fas fa-arrow-up"></i> 15.7% o'tgan oyga nisbatan</div>
+                </div>
+            </div>
+
+            <!-- Chart + Activity -->
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3><i class="fas fa-chart-area" style="color:var(--primary);"></i> Oylik konsultatsiyalar</h3>
+                        <select class="admin-filter-select" style="font-size:13px;padding:6px 30px 6px 10px;">
+                            <option>2026-yil</option>
+                            <option>2025-yil</option>
+                        </select>
+                    </div>
+                    <div class="admin-card-body">
+                        <div class="chart-placeholder">
+                            <div class="chart-bar" style="height:60px;"><span>Yan</span></div>
+                            <div class="chart-bar" style="height:80px;"><span>Fev</span></div>
+                            <div class="chart-bar" style="height:95px;"><span>Mar</span></div>
+                            <div class="chart-bar" style="height:110px;"><span>Apr</span></div>
+                            <div class="chart-bar" style="height:150px;"><span>May</span></div>
+                            <div class="chart-bar" style="height:50px;opacity:0.3;"><span>Iyun</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.2;"><span>Iyul</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.15;"><span>Avg</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.1;"><span>Sen</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.1;"><span>Okt</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.1;"><span>Noy</span></div>
+                            <div class="chart-bar" style="height:40px;opacity:0.1;"><span>Dek</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3><i class="fas fa-clock" style="color:#FF6B35;"></i> So'nggi faoliyat</h3>
+                        <a href="#" style="font-size:13px; color:var(--primary); font-weight:500;">Barchasi</a>
+                    </div>
+                    <div class="admin-card-body">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon green"><i class="fas fa-user-plus"></i></div>
+                                <div>
+                                    <div class="activity-text"><strong>Dr. Xolmatov A.</strong> yangi shifokor sifatida qo'shildi</div>
+                                    <div class="activity-time">5 daqiqa oldin</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon blue"><i class="fas fa-video"></i></div>
+                                <div>
+                                    <div class="activity-text"><strong>142 ta</strong> video konsultatsiya bugun amalga oshirildi</div>
+                                    <div class="activity-time">1 soat oldin</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon orange"><i class="fas fa-star"></i></div>
+                                <div>
+                                    <div class="activity-text"><strong>Dr. Karimov J.</strong> 5 yulduzli baho oldi</div>
+                                    <div class="activity-time">2 soat oldin</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon purple"><i class="fas fa-robot"></i></div>
+                                <div>
+                                    <div class="activity-text">AI diagnostika <strong>350 ta</strong> tahlil bajardi</div>
+                                    <div class="activity-time">3 soat oldin</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Appointments + Top Doctors -->
+            <div class="admin-grid-equal">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3><i class="fas fa-calendar" style="color:var(--green);"></i> Bugungi uchrashuvlar</h3>
+                        <a href="admin-appointments.html" style="font-size:13px; color:var(--primary); font-weight:500;">Barchasi →</a>
+                    </div>
+                    <div class="admin-card-body no-padding">
+                        <table class="admin-table">
+                            <thead><tr><th>Bemor</th><th>Shifokor</th><th>Vaqt</th><th>Holat</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar blue"><i class="fas fa-user"></i></div><div><div class="table-user-name">Aziz T.</div></div></div></td>
+                                    <td>Dr. Karimov J.</td>
+                                    <td>10:00</td>
+                                    <td><span class="badge badge-green">Tugallangan</span></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar purple"><i class="fas fa-user"></i></div><div><div class="table-user-name">Nilufar S.</div></div></div></td>
+                                    <td>Dr. Rahimova D.</td>
+                                    <td>11:30</td>
+                                    <td><span class="badge badge-blue">Jarayonda</span></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar green"><i class="fas fa-user"></i></div><div><div class="table-user-name">Sardor M.</div></div></div></td>
+                                    <td>Dr. Aliyev S.</td>
+                                    <td>14:00</td>
+                                    <td><span class="badge badge-yellow">Kutilmoqda</span></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar orange"><i class="fas fa-user"></i></div><div><div class="table-user-name">Malika R.</div></div></div></td>
+                                    <td>Dr. Umarova M.</td>
+                                    <td>15:30</td>
+                                    <td><span class="badge badge-yellow">Kutilmoqda</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3><i class="fas fa-trophy" style="color:#F59E0B;"></i> Top shifokorlar</h3>
+                        <a href="admin-doctors.html" style="font-size:13px; color:var(--primary); font-weight:500;">Barchasi →</a>
+                    </div>
+                    <div class="admin-card-body no-padding">
+                        <table class="admin-table">
+                            <thead><tr><th>Shifokor</th><th>Reyting</th><th>Bemorlar</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar blue"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Karimov J.</div><div class="table-user-sub">Kardiolog</div></div></div></td>
+                                    <td><i class="fas fa-star" style="color:#FBBF24;font-size:12px;"></i> 4.9</td>
+                                    <td>2,340</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar pink"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Nazarova G.</div><div class="table-user-sub">Psixolog</div></div></div></td>
+                                    <td><i class="fas fa-star" style="color:#FBBF24;font-size:12px;"></i> 5.0</td>
+                                    <td>980</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar green"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Aliyev S.</div><div class="table-user-sub">Nevropatolog</div></div></div></td>
+                                    <td><i class="fas fa-star" style="color:#FBBF24;font-size:12px;"></i> 4.9</td>
+                                    <td>1,850</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="table-user"><div class="table-avatar teal"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Rahimova D.</div><div class="table-user-sub">Terapevt</div></div></div></td>
+                                    <td><i class="fas fa-star" style="color:#FBBF24;font-size:12px;"></i> 4.8</td>
+                                    <td>3,120</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script>
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+</script>
+</body>
+</html>

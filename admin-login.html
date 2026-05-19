@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Kirish — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="admin-login-page">
+    <div class="admin-login-card">
+        <div class="admin-login-logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>TeleMed<strong>UZ</strong></span>
+        </div>
+        <div class="admin-login-badge"><span>ADMIN PANEL</span></div>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label>Admin login</label>
+                <div class="form-input-icon">
+                    <i class="fas fa-user-shield"></i>
+                    <input type="text" class="form-input" placeholder="admin@telemed.uz" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Parol</label>
+                <div class="form-input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="form-input" placeholder="Parolingizni kiriting" required>
+                </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                <label class="form-check"><input type="checkbox" checked> Eslab qolish</label>
+            </div>
+            <button type="submit" class="btn btn-block btn-lg" style="background:linear-gradient(135deg,#FF6B35,#FF8C42);color:#fff;box-shadow:0 4px 15px rgba(255,107,53,0.3);">
+                <i class="fas fa-sign-in-alt"></i> Kirish
+            </button>
+        </form>
+        <div style="text-align:center; margin-top:24px;">
+            <a href="index.html" style="color:var(--gray-2); font-size:14px;"><i class="fas fa-arrow-left"></i> Asosiy saytga qaytish</a>
+        </div>
+    </div>
+</div>
+<script>
+document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'admin-dashboard.html';
+});
+</script>
+</body>
+</html>

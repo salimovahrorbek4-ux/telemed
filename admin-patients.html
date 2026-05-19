@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bemorlar boshqaruvi — TeleMed UZ Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="admin-sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span><span class="admin-badge">ADMIN</span></div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="sidebar-link"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="admin-doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="admin-patients.html" class="sidebar-link active"><i class="fas fa-users"></i> Bemorlar</a>
+            <a href="admin-appointments.html" class="sidebar-link"><i class="fas fa-calendar-alt"></i> Uchrashuvlar <span class="sidebar-badge">5</span></a>
+            <div class="sidebar-section">Tizim</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-chart-bar"></i> Hisobotlar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-bell"></i> Bildirishnomalar <span class="sidebar-badge">3</span></a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user-shield"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Admin</div><div class="sidebar-user-role">Super Admin</div></div>
+            <a href="admin-login.html" style="color:rgba(255,255,255,0.4);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="admin-topbar">
+            <div><h1>Bemorlar boshqaruvi</h1><p>Jami 52,847 ta ro'yxatdan o'tgan bemor</p></div>
+            <div class="admin-topbar-actions">
+                <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i> Eksport</button>
+            </div>
+        </div>
+
+        <div style="padding: 28px 32px;">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card stat-blue">
+                    <div class="admin-stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="admin-stat-value">52,847</div>
+                    <div class="admin-stat-label">Jami bemorlar</div>
+                </div>
+                <div class="admin-stat-card stat-green">
+                    <div class="admin-stat-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="admin-stat-value">38,210</div>
+                    <div class="admin-stat-label">Faol foydalanuvchilar</div>
+                </div>
+                <div class="admin-stat-card stat-orange">
+                    <div class="admin-stat-icon"><i class="fas fa-crown"></i></div>
+                    <div class="admin-stat-value">12,450</div>
+                    <div class="admin-stat-label">Premium obunchilar</div>
+                </div>
+                <div class="admin-stat-card stat-purple">
+                    <div class="admin-stat-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="admin-stat-value">2,180</div>
+                    <div class="admin-stat-label">Bu oy yangi</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="admin-filters">
+                <div class="admin-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Bemor qidirish (ism, telefon, email)..." id="searchInput">
+                </div>
+                <select class="admin-filter-select">
+                    <option>Barcha obunalar</option>
+                    <option>Premium</option>
+                    <option>Oilaviy</option>
+                    <option>Bepul</option>
+                </select>
+                <select class="admin-filter-select">
+                    <option>Barcha holatlar</option>
+                    <option>Faol</option>
+                    <option>Nofaol</option>
+                    <option>Bloklangan</option>
+                </select>
+            </div>
+
+            <!-- Table -->
+            <div class="admin-card">
+                <div class="admin-card-body no-padding">
+                    <table class="admin-table" id="patientsTable">
+                        <thead>
+                            <tr>
+                                <th>Bemor</th>
+                                <th>Telefon</th>
+                                <th>Obuna</th>
+                                <th>Konsultatsiyalar</th>
+                                <th>Qo'shilgan</th>
+                                <th>Holat</th>
+                                <th>Amallar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar blue"><i class="fas fa-user"></i></div><div><div class="table-user-name">Salimov Ahrorbek</div><div class="table-user-sub">ahrorbek@email.com</div></div></div></td>
+                                <td>+998 90 123 45 67</td>
+                                <td><span class="badge badge-blue">Premium</span></td>
+                                <td>12</td>
+                                <td>Yan 2026</td>
+                                <td><span class="badge badge-green">Faol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar purple"><i class="fas fa-user"></i></div><div><div class="table-user-name">Karimova Nilufar</div><div class="table-user-sub">nilufar.k@email.com</div></div></div></td>
+                                <td>+998 91 234 56 78</td>
+                                <td><span class="badge badge-orange">Oilaviy</span></td>
+                                <td>8</td>
+                                <td>Fev 2026</td>
+                                <td><span class="badge badge-green">Faol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar green"><i class="fas fa-user"></i></div><div><div class="table-user-name">Toshmatov Sardor</div><div class="table-user-sub">sardor.t@email.com</div></div></div></td>
+                                <td>+998 93 345 67 89</td>
+                                <td><span class="badge badge-gray">Bepul</span></td>
+                                <td>3</td>
+                                <td>Mar 2026</td>
+                                <td><span class="badge badge-green">Faol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar orange"><i class="fas fa-user"></i></div><div><div class="table-user-name">Rahimov Aziz</div><div class="table-user-sub">aziz.r@email.com</div></div></div></td>
+                                <td>+998 94 456 78 90</td>
+                                <td><span class="badge badge-blue">Premium</span></td>
+                                <td>21</td>
+                                <td>Dek 2025</td>
+                                <td><span class="badge badge-green">Faol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar pink"><i class="fas fa-user"></i></div><div><div class="table-user-name">Aliyeva Malika</div><div class="table-user-sub">malika.a@email.com</div></div></div></td>
+                                <td>+998 95 567 89 01</td>
+                                <td><span class="badge badge-orange">Oilaviy</span></td>
+                                <td>15</td>
+                                <td>Noy 2025</td>
+                                <td><span class="badge badge-green">Faol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="table-user"><div class="table-avatar teal"><i class="fas fa-user"></i></div><div><div class="table-user-name">Xasanov Javohir</div><div class="table-user-sub">javohir.x@email.com</div></div></div></td>
+                                <td>+998 97 678 90 12</td>
+                                <td><span class="badge badge-gray">Bepul</span></td>
+                                <td>1</td>
+                                <td>May 2026</td>
+                                <td><span class="badge badge-yellow">Nofaol</span></td>
+                                <td><div class="table-actions"><button class="table-action-btn edit"><i class="fas fa-edit"></i></button><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-ban"></i></button></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-pagination">
+                    <span>1-6 / 52,847 bemor</span>
+                    <div class="admin-pagination-btns">
+                        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">...</button>
+                        <button class="page-btn">8808</button>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script>
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#patientsTable tbody tr').forEach(r => {
+        r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+</script>
+</body>
+</html>

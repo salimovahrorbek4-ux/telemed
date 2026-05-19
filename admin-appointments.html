@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uchrashuvlar boshqaruvi — TeleMed UZ Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="admin-sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span><span class="admin-badge">ADMIN</span></div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="sidebar-link"><i class="fas fa-chart-pie"></i> Dashboard</a>
+            <a href="admin-doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="admin-patients.html" class="sidebar-link"><i class="fas fa-users"></i> Bemorlar</a>
+            <a href="admin-appointments.html" class="sidebar-link active"><i class="fas fa-calendar-alt"></i> Uchrashuvlar <span class="sidebar-badge">5</span></a>
+            <div class="sidebar-section">Tizim</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-chart-bar"></i> Hisobotlar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-bell"></i> Bildirishnomalar <span class="sidebar-badge">3</span></a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user-shield"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Admin</div><div class="sidebar-user-role">Super Admin</div></div>
+            <a href="admin-login.html" style="color:rgba(255,255,255,0.4);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="admin-topbar">
+            <div><h1>Uchrashuvlar boshqaruvi</h1><p>Barcha konsultatsiyalar va uchrashuvlar</p></div>
+            <div class="admin-topbar-actions">
+                <button class="btn btn-sm btn-outline"><i class="fas fa-download"></i> Eksport</button>
+            </div>
+        </div>
+
+        <div style="padding: 28px 32px;">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="admin-stat-card stat-blue">
+                    <div class="admin-stat-icon"><i class="fas fa-calendar"></i></div>
+                    <div class="admin-stat-value">1,284</div>
+                    <div class="admin-stat-label">Bu oydagi uchrashuvlar</div>
+                </div>
+                <div class="admin-stat-card stat-green">
+                    <div class="admin-stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="admin-stat-value">1,052</div>
+                    <div class="admin-stat-label">Tugallangan</div>
+                </div>
+                <div class="admin-stat-card stat-orange">
+                    <div class="admin-stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="admin-stat-value">187</div>
+                    <div class="admin-stat-label">Kutilmoqda</div>
+                </div>
+                <div class="admin-stat-card stat-purple">
+                    <div class="admin-stat-icon"><i class="fas fa-times-circle"></i></div>
+                    <div class="admin-stat-value">45</div>
+                    <div class="admin-stat-label">Bekor qilingan</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="admin-filters">
+                <div class="admin-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Bemor yoki shifokor qidirish..." id="searchInput">
+                </div>
+                <select class="admin-filter-select" id="statusFilter">
+                    <option value="all">Barcha holatlar</option>
+                    <option>Tugallangan</option>
+                    <option>Jarayonda</option>
+                    <option>Kutilmoqda</option>
+                    <option>Bekor qilingan</option>
+                </select>
+                <select class="admin-filter-select">
+                    <option>Barcha turlar</option>
+                    <option>Video</option>
+                    <option>Chat</option>
+                    <option>Telefon</option>
+                </select>
+                <input type="date" class="admin-filter-select" value="2026-05-19" style="padding:10px 14px;">
+            </div>
+
+            <!-- Table -->
+            <div class="admin-card">
+                <div class="admin-card-body no-padding">
+                    <table class="admin-table" id="appointmentsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Bemor</th>
+                                <th>Shifokor</th>
+                                <th>Sana & Vaqt</th>
+                                <th>Turi</th>
+                                <th>Holat</th>
+                                <th>Summa</th>
+                                <th>Amallar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A001</td>
+                                <td><div class="table-user"><div class="table-avatar blue"><i class="fas fa-user"></i></div><div><div class="table-user-name">Aziz T.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar blue"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Karimov J.</div><div class="table-user-sub">Kardiolog</div></div></div></td>
+                                <td><div class="table-user-name">19-may, 2026</div><div class="table-user-sub">10:00 - 10:30</div></td>
+                                <td><span class="badge badge-blue"><i class="fas fa-video"></i> Video</span></td>
+                                <td><span class="badge badge-green">Tugallangan</span></td>
+                                <td style="font-weight:600;">Bepul</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-times"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A002</td>
+                                <td><div class="table-user"><div class="table-avatar purple"><i class="fas fa-user"></i></div><div><div class="table-user-name">Nilufar S.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar pink"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Rahimova D.</div><div class="table-user-sub">Terapevt</div></div></div></td>
+                                <td><div class="table-user-name">19-may, 2026</div><div class="table-user-sub">11:30 - 12:00</div></td>
+                                <td><span class="badge badge-blue"><i class="fas fa-video"></i> Video</span></td>
+                                <td><span class="badge badge-blue">Jarayonda</span></td>
+                                <td style="font-weight:600;">49,000</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-times"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A003</td>
+                                <td><div class="table-user"><div class="table-avatar green"><i class="fas fa-user"></i></div><div><div class="table-user-name">Sardor M.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar green"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Aliyev S.</div><div class="table-user-sub">Nevropatolog</div></div></div></td>
+                                <td><div class="table-user-name">19-may, 2026</div><div class="table-user-sub">14:00 - 14:30</div></td>
+                                <td><span class="badge badge-green"><i class="fas fa-comment"></i> Chat</span></td>
+                                <td><span class="badge badge-yellow">Kutilmoqda</span></td>
+                                <td style="font-weight:600;">Bepul</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-times"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A004</td>
+                                <td><div class="table-user"><div class="table-avatar orange"><i class="fas fa-user"></i></div><div><div class="table-user-name">Malika R.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar purple"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Umarova M.</div><div class="table-user-sub">Pediatr</div></div></div></td>
+                                <td><div class="table-user-name">19-may, 2026</div><div class="table-user-sub">15:30 - 16:00</div></td>
+                                <td><span class="badge badge-blue"><i class="fas fa-video"></i> Video</span></td>
+                                <td><span class="badge badge-yellow">Kutilmoqda</span></td>
+                                <td style="font-weight:600;">99,000</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-times"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A005</td>
+                                <td><div class="table-user"><div class="table-avatar teal"><i class="fas fa-user"></i></div><div><div class="table-user-name">Javohir X.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar teal"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Toshmatov B.</div><div class="table-user-sub">Dermatolog</div></div></div></td>
+                                <td><div class="table-user-name">20-may, 2026</div><div class="table-user-sub">09:00 - 09:30</div></td>
+                                <td><span class="badge badge-orange"><i class="fas fa-phone"></i> Telefon</span></td>
+                                <td><span class="badge badge-yellow">Kutilmoqda</span></td>
+                                <td style="font-weight:600;">49,000</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button><button class="table-action-btn danger"><i class="fas fa-times"></i></button></div></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:600;color:var(--gray-2);">#A006</td>
+                                <td><div class="table-user"><div class="table-avatar pink"><i class="fas fa-user"></i></div><div><div class="table-user-name">Gulnora A.</div></div></div></td>
+                                <td><div class="table-user"><div class="table-avatar orange"><i class="fas fa-user-md"></i></div><div><div class="table-user-name">Dr. Nazarova G.</div><div class="table-user-sub">Psixolog</div></div></div></td>
+                                <td><div class="table-user-name">18-may, 2026</div><div class="table-user-sub">16:00 - 17:00</div></td>
+                                <td><span class="badge badge-blue"><i class="fas fa-video"></i> Video</span></td>
+                                <td><span class="badge badge-red">Bekor qilingan</span></td>
+                                <td style="font-weight:600; text-decoration:line-through; color:var(--gray-3);">99,000</td>
+                                <td><div class="table-actions"><button class="table-action-btn"><i class="fas fa-eye"></i></button></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-pagination">
+                    <span>1-6 / 1,284 uchrashuv</span>
+                    <div class="admin-pagination-btns">
+                        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">...</button>
+                        <button class="page-btn">214</button>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script>
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#appointmentsTable tbody tr').forEach(r => {
+        r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+</script>
+</body>
+</html>
