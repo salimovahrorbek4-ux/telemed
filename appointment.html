@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yozilish — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Bosh sahifa</a>
+            <a href="doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="ai-diagnostika.html" class="sidebar-link"><i class="fas fa-robot"></i> AI Diagnostika</a>
+            <a href="appointment.html" class="sidebar-link active"><i class="fas fa-calendar-check"></i> Yozilish <span class="sidebar-badge">2</span></a>
+            <div class="sidebar-section">Boshqa</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Tarix</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-pills"></i> Retseptlar</a>
+            <a href="profile.html" class="sidebar-link"><i class="fas fa-user"></i> Profil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Ahrorbek S.</div><div class="sidebar-user-role">Bemor</div></div>
+            <a href="index.html" style="color:var(--gray-3);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h1>Shifokorga yozilish</h1>
+                <p>Qulay vaqtni tanlang va konsultatsiya uchun yoziling</p>
+            </div>
+        </div>
+
+        <!-- Doctor Header -->
+        <div class="appointment-header">
+            <div class="appointment-doctor-avatar"><i class="fas fa-user-md"></i></div>
+            <div class="appointment-doctor-info">
+                <h2>Dr. Karimov Jasur</h2>
+                <div class="specialty">Kardiolog</div>
+                <div class="meta">
+                    <span><i class="fas fa-star" style="color:#FBBF24;"></i> 4.9</span>
+                    <span><i class="fas fa-users"></i> 2,340 bemor</span>
+                    <span><i class="fas fa-briefcase"></i> 15 yil tajriba</span>
+                    <span style="color:var(--green);"><i class="fas fa-circle" style="font-size:8px;"></i> Onlayn</span>
+                </div>
+            </div>
+            <div style="margin-left:auto;">
+                <span class="badge badge-green" style="font-size:14px; padding:8px 16px;">Bugun bo'sh vaqtlar bor</span>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <!-- Calendar -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-calendar" style="color:var(--primary);margin-right:8px;"></i>Sanani tanlang</h3>
+                </div>
+                <div class="calendar-mini">
+                    <div class="calendar-header">
+                        <button><i class="fas fa-chevron-left"></i></button>
+                        <h4>May 2026</h4>
+                        <button><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-name">Du</div><div class="calendar-day-name">Se</div><div class="calendar-day-name">Chor</div>
+                        <div class="calendar-day-name">Pay</div><div class="calendar-day-name">Ju</div><div class="calendar-day-name">Sha</div>
+                        <div class="calendar-day-name">Ya</div>
+                        <div class="calendar-day other-month">28</div><div class="calendar-day other-month">29</div><div class="calendar-day other-month">30</div>
+                        <div class="calendar-day">1</div><div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div>
+                        <div class="calendar-day">8</div><div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div>
+                        <div class="calendar-day">12</div><div class="calendar-day">13</div><div class="calendar-day">14</div>
+                        <div class="calendar-day">15</div><div class="calendar-day">16</div><div class="calendar-day">17</div>
+                        <div class="calendar-day">18</div><div class="calendar-day today selected">19</div><div class="calendar-day">20</div><div class="calendar-day">21</div>
+                        <div class="calendar-day">22</div><div class="calendar-day">23</div><div class="calendar-day">24</div>
+                        <div class="calendar-day">25</div><div class="calendar-day">26</div><div class="calendar-day">27</div><div class="calendar-day">28</div>
+                        <div class="calendar-day">29</div><div class="calendar-day">30</div><div class="calendar-day">31</div>
+                    </div>
+                </div>
+
+                <h4 style="font-size:14px; font-weight:700; margin-bottom:12px;">Vaqtni tanlang:</h4>
+                <div class="time-slots" id="timeSlots">
+                    <div class="time-slot disabled">09:00</div>
+                    <div class="time-slot disabled">09:30</div>
+                    <div class="time-slot">10:00</div>
+                    <div class="time-slot">10:30</div>
+                    <div class="time-slot">11:00</div>
+                    <div class="time-slot disabled">11:30</div>
+                    <div class="time-slot">14:00</div>
+                    <div class="time-slot">14:30</div>
+                    <div class="time-slot">15:00</div>
+                    <div class="time-slot disabled">15:30</div>
+                    <div class="time-slot">16:00</div>
+                    <div class="time-slot">16:30</div>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-clipboard-list" style="color:var(--accent);margin-right:8px;"></i>Buyurtma tafsilotlari</h3>
+                </div>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Konsultatsiya turi</label>
+                        <select class="form-input">
+                            <option>Video konsultatsiya</option>
+                            <option>Chat konsultatsiya</option>
+                            <option>Telefon konsultatsiya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Murojaat sababi</label>
+                        <select class="form-input">
+                            <option value="">Tanlang</option>
+                            <option>Birinchi konsultatsiya</option>
+                            <option>Qayta ko'rik</option>
+                            <option>Tahlil natijalari muhokamasi</option>
+                            <option>Retsept yangilash</option>
+                            <option>Boshqa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Shikoyatingiz</label>
+                        <textarea class="form-input" rows="3" placeholder="Simptomlaringizni qisqacha yozing..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Fayllar biriktirish (ixtiyoriy)</label>
+                        <div style="border:2px dashed var(--gray-4); border-radius:10px; padding:24px; text-align:center; color:var(--gray-3); cursor:pointer;">
+                            <i class="fas fa-cloud-upload-alt" style="font-size:28px; margin-bottom:8px;"></i>
+                            <p style="font-size:13px;">Tahlil yoki rasm yuklash</p>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div style="background:var(--gray-6); border-radius:12px; padding:20px; margin-bottom:20px;">
+                        <h4 style="font-size:14px; margin-bottom:12px;">Buyurtma xulosasi</h4>
+                        <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;">
+                            <span style="color:var(--gray-2);">Shifokor:</span>
+                            <strong>Dr. Karimov Jasur</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;">
+                            <span style="color:var(--gray-2);">Sana:</span>
+                            <strong id="selectedDate">19-may, 2026</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;">
+                            <span style="color:var(--gray-2);">Vaqt:</span>
+                            <strong id="selectedTime">Tanlanmagan</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; font-size:14px; border-top:1px solid var(--gray-4); padding-top:12px; margin-top:12px;">
+                            <span style="color:var(--gray-2);">Narx:</span>
+                            <strong style="font-size:18px; color:var(--primary);">Bepul</strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        <i class="fas fa-check-circle"></i> Yozilish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <div class="modal-icon success"><i class="fas fa-check-circle"></i></div>
+        <h3>Muvaffaqiyatli yozildingiz!</h3>
+        <p>Dr. Karimov Jasur bilan konsultatsiya belgilandi. Tez orada SMS orqali tasdiqlash xabari keladi.</p>
+        <a href="dashboard.html" class="btn btn-primary"><i class="fas fa-home"></i> Bosh sahifaga</a>
+    </div>
+</div>
+
+<script>
+// Mobile menu
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+// Calendar day selection
+document.querySelectorAll('.calendar-day:not(.other-month)').forEach(day => {
+    day.addEventListener('click', function() {
+        document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('selectedDate').textContent = this.textContent + '-may, 2026';
+    });
+});
+
+// Time slot selection
+document.querySelectorAll('.time-slot:not(.disabled)').forEach(slot => {
+    slot.addEventListener('click', function() {
+        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('selectedTime').textContent = this.textContent;
+    });
+});
+
+// Booking form
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('successModal').classList.add('active');
+});
+</script>
+</body>
+</html>

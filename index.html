@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleMed UZ — Onlayn Tibbiy Xizmat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="container">
+        <a href="#" class="logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>TeleMed<strong>UZ</strong></span>
+        </a>
+        <nav class="nav" id="nav">
+            <a href="#services" class="nav-link">Xizmatlar</a>
+            <a href="#how-it-works" class="nav-link">Qanday ishlaydi</a>
+            <a href="#doctors" class="nav-link">Shifokorlar</a>
+            <a href="#pricing" class="nav-link">Narxlar</a>
+            <a href="#contact" class="nav-link">Aloqa</a>
+        </nav>
+        <div class="header-actions">
+            <a href="login.html" class="btn btn-primary btn-sm">Ro'yxatdan o'tish</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menyu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="container hero-content">
+        <div class="hero-text">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                O'zbekistonning birinchi telemedicina platformasi
+            </div>
+            <h1>Shifokor bilan<br><span class="gradient-text">onlayn konsultatsiya</span><br>har qanday joydan</h1>
+            <p class="hero-desc">Qishloq yoki shaharda — farqi yo'q. Professional shifokorlar bilan video aloqa, AI-diagnostika va dorilarni uyingizgacha yetkazib berish xizmati.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-play-circle"></i>
+                    Bepul konsultatsiya olish
+                </a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">
+                    Qanday ishlaydi?
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>500+</strong>
+                    <span>Shifokorlar</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <strong>50,000+</strong>
+                    <span>Bemorlar</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <strong>24/7</strong>
+                    <span>Xizmat</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div>
+                        <h4>Dr. Karimova Nilufar</h4>
+                        <span>Terapevt &bull; Onlayn</span>
+                    </div>
+                    <div class="online-dot"></div>
+                </div>
+                <div class="hero-card-video">
+                    <div class="video-placeholder">
+                        <i class="fas fa-video"></i>
+                        <span>Video konsultatsiya</span>
+                    </div>
+                </div>
+                <div class="hero-card-actions">
+                    <button class="card-action-btn mic"><i class="fas fa-microphone"></i></button>
+                    <button class="card-action-btn camera"><i class="fas fa-video"></i></button>
+                    <button class="card-action-btn end"><i class="fas fa-phone-slash"></i></button>
+                    <button class="card-action-btn chat"><i class="fas fa-comment-dots"></i></button>
+                </div>
+            </div>
+            <div class="floating-card floating-card-1">
+                <i class="fas fa-shield-alt"></i>
+                <span>Ma'lumotlar himoyalangan</span>
+            </div>
+            <div class="floating-card floating-card-2">
+                <i class="fas fa-pills"></i>
+                <span>Dori yetkazib berish</span>
+            </div>
+            <div class="floating-card floating-card-3">
+                <i class="fas fa-robot"></i>
+                <span>AI diagnostika</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+    <div class="container stats-grid">
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+                <strong class="counter" data-target="14">0</strong>
+                <span>Viloyatda xizmat</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-stethoscope"></i></div>
+            <div>
+                <strong class="counter" data-target="35">0</strong><span class="stat-plus">+</span>
+                <span>Mutaxassislik</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div>
+                <strong class="counter" data-target="5">0</strong> <span class="stat-unit">daqiqa</span>
+                <span>O'rtacha kutish</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-smile"></i></div>
+            <div>
+                <strong class="counter" data-target="98">0</strong><span class="stat-plus">%</span>
+                <span>Mamnunlik darajasi</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section section-problem" id="problem">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Muammo</span>
+            <h2>Nima uchun TeleMed UZ kerak?</h2>
+            <p>O'zbekistonda sog'liqni saqlash tizimida katta muammolar mavjud</p>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-road"></i></div>
+                <h3>Masofaviy hududlar</h3>
+                <p>Qishloq aholisining 60% dan ortig'i mutaxassis shifokorlarga murojaat qilish uchun 100+ km yurishi kerak.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Shifokor tanqisligi</h3>
+                <p>Qishloq tibbiyot muassasalarida shifokorlar soni shahar bilan solishtirganda 3 baravar kam.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-hourglass-half"></i></div>
+                <h3>Uzoq navbatlar</h3>
+                <p>Davlat poliklinikalarida bemorlar o'rtacha 2-3 soat navbatda kutishadi.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <h3>Yuqori xarajatlar</h3>
+                <p>Yo'l xarajatlari, mehmonxona va ish kunini yo'qotish — har bir tashrif qimmatga tushadi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Xizmatlar</span>
+            <h2>Bizning xizmatlarimiz</h2>
+            <p>Zamonaviy texnologiyalar bilan sog'liqni saqlash</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card service-card-featured">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Video konsultatsiya</h3>
+                <p>Har qanday joydan professional shifokor bilan yuzma-yuz video aloqa. HD sifatida, xavfsiz va maxfiy.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 24/7 mavjud</li>
+                    <li><i class="fas fa-check"></i> HD video sifati</li>
+                    <li><i class="fas fa-check"></i> Shifrlangan aloqa</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI diagnostika</h3>
+                <p>Sun'iy intellekt yordamida dastlabki tashxis qo'yish. Simptomlaringizni kiriting — AI tahlil qiladi.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 95%+ aniqlik</li>
+                    <li><i class="fas fa-check"></i> Tezkor natija</li>
+                    <li><i class="fas fa-check"></i> 1000+ kasallik bazasi</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <h3>Elektron retsept</h3>
+                <p>Shifokor onlayn retsept yozadi — siz yaqin dorixonadan yoki uyingizga yetkazib olasiz.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Raqamli imzo</li>
+                    <li><i class="fas fa-check"></i> QR-kod tekshiruv</li>
+                    <li><i class="fas fa-check"></i> Tarix saqlash</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <h3>Dori yetkazib berish</h3>
+                <p>Retseptdagi dorilarni eshigizgacha yetkazamiz. Dorixonalar bilan hamkorlik.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 2 soat ichida</li>
+                    <li><i class="fas fa-check"></i> Barcha viloyatlar</li>
+                    <li><i class="fas fa-check"></i> Arzon narxlar</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Sog'liq monitoringi</h3>
+                <p>Surunkali kasalliklar uchun doimiy monitoring. Shifokor sizning holatni kuzatib boradi.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> IoT qurilmalar</li>
+                    <li><i class="fas fa-check"></i> Real-time ma'lumot</li>
+                    <li><i class="fas fa-check"></i> Ogohlantirish tizimi</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Psixologik yordam</h3>
+                <p>Malakali psixologlar bilan maxfiy suhbat. Stress, depressiya va boshqa muammolarga yordam.</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> To'liq maxfiylik</li>
+                    <li><i class="fas fa-check"></i> Chat va video</li>
+                    <li><i class="fas fa-check"></i> Oilaviy konsultatsiya</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-how" id="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Jarayon</span>
+            <h2>Qanday ishlaydi?</h2>
+            <p>Atigi 4 oddiy qadam bilan shifokorga murojaat qiling</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Ilovani yuklab oling</h3>
+                <p>App Store yoki Google Play'dan TeleMed UZ ilovasini yuklab oling va ro'yxatdan o'ting.</p>
+            </div>
+            <div class="step-connector">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fas fa-search"></i></div>
+                <h3>Shifokor tanlang</h3>
+                <p>Mutaxassislik, reyting va vaqt bo'yicha qulay shifokorni tanlang yoki AI tavsiya beradi.</p>
+            </div>
+            <div class="step-connector">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fas fa-video"></i></div>
+                <h3>Konsultatsiya oling</h3>
+                <p>Video yoki chat orqali shifokor bilan suhbatlashing. AI-diagnostika natijalarini ko'ring.</p>
+            </div>
+            <div class="step-connector">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <div class="step-icon"><i class="fas fa-truck"></i></div>
+                <h3>Dori oling</h3>
+                <p>Elektron retsept bilan dorilarni dorixonadan yoki uyingizga yetkazib olish buyurtma qiling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="section section-doctors" id="doctors">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Jamoa</span>
+            <h2>Bizning shifokorlarimiz</h2>
+            <p>Tajribali va malakali mutaxassislar</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status online"></div>
+                </div>
+                <h3>Dr. Karimov Jasur</h3>
+                <span class="doctor-specialty">Kardiolog</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                    <span><i class="fas fa-users"></i> 2,340 bemor</span>
+                </div>
+                <span class="doctor-exp">15 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status online"></div>
+                </div>
+                <h3>Dr. Rahimova Dilnoza</h3>
+                <span class="doctor-specialty">Terapevt</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 4.8</span>
+                    <span><i class="fas fa-users"></i> 3,120 bemor</span>
+                </div>
+                <span class="doctor-exp">12 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status online"></div>
+                </div>
+                <h3>Dr. Aliyev Sardor</h3>
+                <span class="doctor-specialty">Nevropatolog</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                    <span><i class="fas fa-users"></i> 1,850 bemor</span>
+                </div>
+                <span class="doctor-exp">18 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status"></div>
+                </div>
+                <h3>Dr. Umarova Madina</h3>
+                <span class="doctor-specialty">Pediatr</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 4.7</span>
+                    <span><i class="fas fa-users"></i> 4,200 bemor</span>
+                </div>
+                <span class="doctor-exp">10 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status online"></div>
+                </div>
+                <h3>Dr. Toshmatov Bobur</h3>
+                <span class="doctor-specialty">Dermatolog</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 4.8</span>
+                    <span><i class="fas fa-users"></i> 1,560 bemor</span>
+                </div>
+                <span class="doctor-exp">8 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar">
+                    <i class="fas fa-user-md"></i>
+                    <div class="doctor-status online"></div>
+                </div>
+                <h3>Dr. Nazarova Gulnora</h3>
+                <span class="doctor-specialty">Psixolog</span>
+                <div class="doctor-info">
+                    <span><i class="fas fa-star"></i> 5.0</span>
+                    <span><i class="fas fa-users"></i> 980 bemor</span>
+                </div>
+                <span class="doctor-exp">14 yil tajriba</span>
+                <a href="#contact" class="btn btn-outline btn-sm">Yozilish</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-pricing" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Narxlar</span>
+            <h2>Qulay narxlar</h2>
+            <p>Har bir oila uchun mos reja tanlang</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Boshlang'ich</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">Bepul</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> AI diagnostika (cheksiz)</li>
+                    <li><i class="fas fa-check"></i> Oyiga 1 ta video konsultatsiya</li>
+                    <li><i class="fas fa-check"></i> Tibbiy maqolalar</li>
+                    <li><i class="fas fa-check"></i> Chat orqali maslahat</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Dori yetkazib berish</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Sog'liq monitoringi</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">Boshlash</a>
+            </div>
+            <div class="pricing-card pricing-featured">
+                <div class="pricing-badge">Eng mashhur</div>
+                <div class="pricing-header">
+                    <h3>Oilaviy</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">49,000</span>
+                        <span class="price-period">so'm/oy</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> AI diagnostika (cheksiz)</li>
+                    <li><i class="fas fa-check"></i> Cheksiz video konsultatsiya</li>
+                    <li><i class="fas fa-check"></i> Elektron retseptlar</li>
+                    <li><i class="fas fa-check"></i> Bepul dori yetkazib berish</li>
+                    <li><i class="fas fa-check"></i> 4 oila a'zosi uchun</li>
+                    <li><i class="fas fa-check"></i> Sog'liq monitoringi</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary btn-block">Tanlash</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Premium</h3>
+                    <div class="pricing-price">
+                        <span class="price-amount">99,000</span>
+                        <span class="price-period">so'm/oy</span>
+                    </div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Barcha Oilaviy imkoniyatlari</li>
+                    <li><i class="fas fa-check"></i> Shaxsiy shifokor biriktiriladi</li>
+                    <li><i class="fas fa-check"></i> Laboratoriya tahlillari</li>
+                    <li><i class="fas fa-check"></i> VIP navbatsiz xizmat</li>
+                    <li><i class="fas fa-check"></i> 8 oila a'zosi uchun</li>
+                    <li><i class="fas fa-check"></i> Yillik tibbiy tekshiruv</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline btn-block">Tanlash</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Fikrlar</span>
+            <h2>Foydalanuvchilar nima deydi?</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Qashqadaryo viloyatida yashayman. Ilgari Toshkentga borish uchun 2 kun ketardi. Endi shifokor bilan uydan turib gaplashaman!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <strong>Aziza Murodova</strong>
+                        <span>Qashqadaryo, fermer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Bolam tungi soat 2 da isitmalab qoldi. TeleMed orqali pediatr bilan bog'landim — 10 daqiqada yordam berdi. Dori ham yetkazib berishdi!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <strong>Sherzod Karimov</strong>
+                        <span>Toshkent, dasturchi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"AI diagnostika meni hayratga soldi — simptomlarimni kiritdim, natija juda aniq chiqdi. Shifokor ham tasdiqladi."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <strong>Malika Yusupova</strong>
+                        <span>Samarqand, o'qituvchi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">FAQ</span>
+            <h2>Ko'p beriladigan savollar</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>TeleMed UZ qanday ishlaydi?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Ilovamizni yuklab oling, ro'yxatdan o'ting, kerakli mutaxassisni tanlang va video yoki chat orqali konsultatsiya oling. Shifokor kerak bo'lsa retsept yozadi, biz dorilarni yetkazib beramiz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Xizmat narxi qancha?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Bepul rejadan boshlashingiz mumkin — oyiga 1 ta konsultatsiya va cheksiz AI diagnostika. Oilaviy reja oyiga atigi 49,000 so'm — cheksiz konsultatsiya va bepul dori yetkazib berish bilan.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Qaysi hududlarda xizmat ko'rsatiladi?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Video konsultatsiya — butun O'zbekiston bo'ylab. Dori yetkazib berish — hozirda 14 ta viloyatda, har oy kengaymoqda.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Ma'lumotlarim xavfsizmi?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Ha, barcha ma'lumotlar AES-256 shifrlash bilan himoyalangan. Biz O'zbekiston "Shaxsiy ma'lumotlar to'g'risida"gi qonunga to'liq rioya qilamiz.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>AI diagnostika qanchalik aniq?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>AI tizimimiz 95%+ aniqlikka ega. Lekin bu dastlabki tashxis — yakuniy qaror har doim shifokor tomonidan qo'yiladi. AI shifokorni almashtirish uchun emas, unga yordam berish uchun ishlaydi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Sog'lig'ingiz — eng katta boyligingiz</h2>
+            <p>Bugun bepul ro'yxatdan o'ting va birinchi konsultatsiyangizni oling. 500+ shifokor sizni kutmoqda.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-white btn-lg">
+                    <i class="fas fa-rocket"></i>
+                    Bepul boshlash
+                </a>
+                <a href="tel:+998901234567" class="btn btn-outline-white btn-lg">
+                    <i class="fas fa-phone"></i>
+                    +998 90 123 45 67
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Aloqa</span>
+            <h2>Biz bilan bog'laning</h2>
+            <p>Savollaringiz bormi? Yozing yoki qo'ng'iroq qiling</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-form-wrap">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ismingiz</label>
+                            <input type="text" placeholder="Ism Familiya" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon raqam</label>
+                            <input type="tel" placeholder="+998 90 000 00 00" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mutaxassislik</label>
+                        <select>
+                            <option value="">Mutaxassislikni tanlang</option>
+                            <option>Terapevt</option>
+                            <option>Kardiolog</option>
+                            <option>Nevropatolog</option>
+                            <option>Pediatr</option>
+                            <option>Dermatolog</option>
+                            <option>Psixolog</option>
+                            <option>Ginekolog</option>
+                            <option>Urolog</option>
+                            <option>Boshqa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Xabar</label>
+                        <textarea placeholder="Shikoyatingizni yoki savolingizni yozing..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="fas fa-paper-plane"></i>
+                        Yuborish
+                    </button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Manzil</h4>
+                        <p>Toshkent sh., Amir Temur ko'chasi 108<br>IT Park binosi, 5-qavat</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <h4>Telefon</h4>
+                        <p>+998 90 123 45 67<br>+998 71 200 00 00</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@telemeduz.uz<br>support@telemeduz.uz</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h4>Ish vaqti</h4>
+                        <p>Konsultatsiya: 24/7<br>Ofis: Dush-Juma 9:00-18:00</p>
+                    </div>
+                </div>
+                <div class="contact-socials">
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>TeleMed<strong>UZ</strong></span>
+                </a>
+                <p>O'zbekistonning birinchi telemedicina platformasi. Zamonaviy texnologiyalar bilan sog'liqni saqlash xizmati.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Sahifalar</h4>
+                <a href="#services">Xizmatlar</a>
+                <a href="#how-it-works">Qanday ishlaydi</a>
+                <a href="#doctors">Shifokorlar</a>
+                <a href="#pricing">Narxlar</a>
+            </div>
+            <div class="footer-links">
+                <h4>Huquqiy</h4>
+                <a href="#">Foydalanish shartlari</a>
+                <a href="#">Maxfiylik siyosati</a>
+                <a href="#">Litsenziyalar</a>
+            </div>
+            <div class="footer-links">
+                <h4>Yuklab olish</h4>
+                <a href="#"><i class="fab fa-apple"></i> App Store</a>
+                <a href="#"><i class="fab fa-google-play"></i> Google Play</a>
+                <a href="#"><i class="fab fa-app-store"></i> AppGallery</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TeleMed UZ. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Muvaffaqiyatli yuborildi!</h3>
+        <p>Tez orada siz bilan bog'lanamiz. Rahmat!</p>
+        <button class="btn btn-primary" onclick="document.getElementById('successModal').classList.remove('active')">Yopish</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

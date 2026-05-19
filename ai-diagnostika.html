@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Diagnostika — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Bosh sahifa</a>
+            <a href="doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="ai-diagnostika.html" class="sidebar-link active"><i class="fas fa-robot"></i> AI Diagnostika</a>
+            <a href="appointment.html" class="sidebar-link"><i class="fas fa-calendar-check"></i> Yozilish <span class="sidebar-badge">2</span></a>
+            <div class="sidebar-section">Boshqa</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Tarix</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-pills"></i> Retseptlar</a>
+            <a href="profile.html" class="sidebar-link"><i class="fas fa-user"></i> Profil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Ahrorbek S.</div><div class="sidebar-user-role">Bemor</div></div>
+            <a href="index.html" style="color:var(--gray-3);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h1>AI Diagnostika</h1>
+                <p>Sun'iy intellekt yordamida dastlabki tashxis oling</p>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="ai-hero">
+            <div class="ai-hero-icon"><i class="fas fa-brain"></i></div>
+            <div>
+                <h2>Aqlli diagnostika tizimi</h2>
+                <p>Simptomlaringizni kiriting — AI tizimimiz 1000+ kasallik bazasi asosida tahlil qiladi va ehtimoliy tashxislarni ko'rsatadi.</p>
+            </div>
+        </div>
+
+        <!-- Input Form -->
+        <div class="grid-2">
+            <div class="card ai-form">
+                <div class="card-header">
+                    <h3><i class="fas fa-stethoscope" style="color:var(--primary);margin-right:8px;"></i>Simptomlaringiz</h3>
+                </div>
+                <div class="form-group">
+                    <label>Asosiy shikoyat</label>
+                    <textarea class="form-input" rows="3" placeholder="Masalan: bosh og'riq, ko'ngil aynish, harorat..." id="mainSymptom"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Qo'shimcha simptomlar (tanlang)</label>
+                    <div class="symptom-tags" id="symptomTags">
+                        <span class="symptom-tag" data-symptom="Bosh og'riq"><i class="fas fa-head-side-virus"></i> Bosh og'riq</span>
+                        <span class="symptom-tag" data-symptom="Isitma"><i class="fas fa-thermometer-half"></i> Isitma</span>
+                        <span class="symptom-tag" data-symptom="Yo'tal"><i class="fas fa-lungs-virus"></i> Yo'tal</span>
+                        <span class="symptom-tag" data-symptom="Charchoq"><i class="fas fa-bed"></i> Charchoq</span>
+                        <span class="symptom-tag" data-symptom="Ko'ngil aynish"><i class="fas fa-dizzy"></i> Ko'ngil aynish</span>
+                        <span class="symptom-tag" data-symptom="Qorin og'riq"><i class="fas fa-stomach"></i> Qorin og'riq</span>
+                        <span class="symptom-tag" data-symptom="Bo'g'im og'riq"><i class="fas fa-bone"></i> Bo'g'im og'riq</span>
+                        <span class="symptom-tag" data-symptom="Teri toshishi"><i class="fas fa-allergies"></i> Teri toshishi</span>
+                        <span class="symptom-tag" data-symptom="Nafas qisilishi"><i class="fas fa-lungs"></i> Nafas qisilishi</span>
+                        <span class="symptom-tag" data-symptom="Bosh aylanishi"><i class="fas fa-spinner"></i> Bosh aylanishi</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Yoshingiz</label>
+                        <input type="number" class="form-input" placeholder="28" id="ageInput">
+                    </div>
+                    <div class="form-group">
+                        <label>Jins</label>
+                        <select class="form-input" id="genderInput">
+                            <option value="">Tanlang</option>
+                            <option>Erkak</option>
+                            <option>Ayol</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Qancha vaqtdan beri? (kun)</label>
+                    <input type="number" class="form-input" placeholder="3" id="durationInput">
+                </div>
+                <button class="btn btn-primary btn-block btn-lg" id="analyzeBtn">
+                    <i class="fas fa-search-plus"></i> Tahlil qilish
+                </button>
+            </div>
+
+            <!-- Info Card -->
+            <div>
+                <div class="card" style="margin-bottom:20px;">
+                    <div class="card-header">
+                        <h3><i class="fas fa-info-circle" style="color:var(--primary);margin-right:8px;"></i>Muhim</h3>
+                    </div>
+                    <div class="ai-advice" style="border:none;background:var(--gray-6);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h4>AI tashxis — bu dastlabki tavsiya</h4>
+                            <p>Bu tizim shifokorni almashtirmaydi. Yakuniy tashxis faqat malakali shifokor tomonidan qo'yiladi. AI natijalarini shifokor bilan muhokama qiling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar" style="color:var(--accent);margin-right:8px;"></i>Statistika</h3>
+                    </div>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+                        <div style="text-align:center; padding:16px; background:var(--gray-6); border-radius:10px;">
+                            <div style="font-size:28px; font-weight:800; color:var(--primary);">95%+</div>
+                            <div style="font-size:12px; color:var(--gray-2);">Aniqlik darajasi</div>
+                        </div>
+                        <div style="text-align:center; padding:16px; background:var(--gray-6); border-radius:10px;">
+                            <div style="font-size:28px; font-weight:800; color:var(--green);">1000+</div>
+                            <div style="font-size:12px; color:var(--gray-2);">Kasallik bazasi</div>
+                        </div>
+                        <div style="text-align:center; padding:16px; background:var(--gray-6); border-radius:10px;">
+                            <div style="font-size:28px; font-weight:800; color:var(--accent);">50K+</div>
+                            <div style="font-size:12px; color:var(--gray-2);">Tahlillar</div>
+                        </div>
+                        <div style="text-align:center; padding:16px; background:var(--gray-6); border-radius:10px;">
+                            <div style="font-size:28px; font-weight:800; color:var(--yellow);">30 sek</div>
+                            <div style="font-size:12px; color:var(--gray-2);">O'rtacha vaqt</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results (hidden initially) -->
+        <div id="resultSection" style="display:none;">
+            <div class="ai-result">
+                <div class="ai-result-header">
+                    <div class="ai-result-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div>
+                        <h3>Tahlil natijalari</h3>
+                        <div class="ai-result-score">Ishonchlilik: 94% | Tahlil vaqti: 2.3 soniya</div>
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom:12px; font-size:15px;">Ehtimoliy tashxislar:</h4>
+                <div class="ai-conditions">
+                    <div class="ai-condition">
+                        <span class="ai-condition-name">ORVI (Shamollash)</span>
+                        <div class="ai-condition-bar"><div class="ai-condition-fill" style="width:78%; background:var(--green);"></div></div>
+                        <span class="ai-condition-pct" style="color:var(--green);">78%</span>
+                    </div>
+                    <div class="ai-condition">
+                        <span class="ai-condition-name">Gripp</span>
+                        <div class="ai-condition-bar"><div class="ai-condition-fill" style="width:45%; background:var(--yellow);"></div></div>
+                        <span class="ai-condition-pct" style="color:var(--yellow);">45%</span>
+                    </div>
+                    <div class="ai-condition">
+                        <span class="ai-condition-name">Sinusit</span>
+                        <div class="ai-condition-bar"><div class="ai-condition-fill" style="width:22%; background:var(--primary);"></div></div>
+                        <span class="ai-condition-pct" style="color:var(--primary);">22%</span>
+                    </div>
+                </div>
+
+                <div class="ai-advice">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h4>AI tavsiyasi</h4>
+                        <p>Simptomlaringiz asosan ORVI (shamollash)ga xos. Ko'p suyuqlik iching, dam oling. Agar harorat 38.5°C dan oshsa yoki 5 kundan oshib ketsa, albatta shifokorga murojaat qiling. Onlayn konsultatsiya olishingiz tavsiya etiladi.</p>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+                    <a href="doctors.html" class="btn btn-primary"><i class="fas fa-user-md"></i> Shifokorga yozilish</a>
+                    <button class="btn btn-outline" onclick="document.getElementById('resultSection').style.display='none';"><i class="fas fa-redo"></i> Qayta tahlil</button>
+                    <button class="btn btn-secondary"><i class="fas fa-download"></i> Natijani saqlash</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+// Mobile menu
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+// Symptom tags
+document.querySelectorAll('.symptom-tag').forEach(tag => {
+    tag.addEventListener('click', () => tag.classList.toggle('selected'));
+});
+
+// Analyze
+document.getElementById('analyzeBtn').addEventListener('click', function() {
+    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Tahlil qilinmoqda...';
+    this.disabled = true;
+    setTimeout(() => {
+        this.innerHTML = '<i class="fas fa-search-plus"></i> Tahlil qilish';
+        this.disabled = false;
+        document.getElementById('resultSection').style.display = 'block';
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+    }, 2000);
+});
+</script>
+</body>
+</html>

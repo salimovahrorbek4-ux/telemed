@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Bosh sahifa</a>
+            <a href="doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="ai-diagnostika.html" class="sidebar-link"><i class="fas fa-robot"></i> AI Diagnostika</a>
+            <a href="appointment.html" class="sidebar-link"><i class="fas fa-calendar-check"></i> Yozilish <span class="sidebar-badge">2</span></a>
+            <div class="sidebar-section">Boshqa</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Tarix</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-pills"></i> Retseptlar</a>
+            <a href="profile.html" class="sidebar-link active"><i class="fas fa-user"></i> Profil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Ahrorbek S.</div><div class="sidebar-user-role">Bemor</div></div>
+            <a href="index.html" style="color:var(--gray-3);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar"><i class="fas fa-user"></i></div>
+            <div class="profile-info">
+                <h2>Ahrorbek Salimov</h2>
+                <p>Premium foydalanuvchi | Ro'yxatdan o'tgan: Yanvar 2026</p>
+                <div class="profile-stats">
+                    <div class="profile-stat"><strong>12</strong><span>Konsultatsiya</span></div>
+                    <div class="profile-stat"><strong>5</strong><span>Retsept</span></div>
+                    <div class="profile-stat"><strong>3</strong><span>Shifokor</span></div>
+                </div>
+            </div>
+            <div style="margin-left:auto;">
+                <button class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.3);"><i class="fas fa-edit"></i> Tahrirlash</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="profile-tabs">
+            <div class="profile-tab active" data-tab="personal">Shaxsiy ma'lumotlar</div>
+            <div class="profile-tab" data-tab="medical">Tibbiy tarix</div>
+            <div class="profile-tab" data-tab="prescriptions">Retseptlar</div>
+            <div class="profile-tab" data-tab="settings">Sozlamalar</div>
+        </div>
+
+        <!-- Personal Tab -->
+        <div class="tab-content active" id="tab-personal">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-user" style="color:var(--primary);margin-right:8px;"></i>Asosiy ma'lumotlar</h3></div>
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">To'liq ism</span>
+                            <strong style="font-size:14px;">Salimov Ahrorbek Davlatovich</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Tug'ilgan sana</span>
+                            <strong style="font-size:14px;">15.03.1998</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Jins</span>
+                            <strong style="font-size:14px;">Erkak</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Telefon</span>
+                            <strong style="font-size:14px;">+998 90 123 45 67</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Email</span>
+                            <strong style="font-size:14px;">ahrorbek@email.com</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0;">
+                            <span style="color:var(--gray-2); font-size:14px;">Manzil</span>
+                            <strong style="font-size:14px;">Toshkent sh., Chilonzor t.</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-notes-medical" style="color:var(--green);margin-right:8px;"></i>Tibbiy ma'lumotlar</h3></div>
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Qon guruhi</span>
+                            <span class="badge badge-red" style="font-size:14px;">A+</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Bo'y / Vazn</span>
+                            <strong style="font-size:14px;">175 sm / 72 kg</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Allergiya</span>
+                            <strong style="font-size:14px;">Penitsillin</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-5);">
+                            <span style="color:var(--gray-2); font-size:14px;">Surunkali kasallik</span>
+                            <strong style="font-size:14px;">Yo'q</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:12px 0;">
+                            <span style="color:var(--gray-2); font-size:14px;">Obuna turi</span>
+                            <span class="badge badge-blue" style="font-size:14px;">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medical History Tab -->
+        <div class="tab-content" id="tab-medical" style="display:none;">
+            <div class="card">
+                <div class="card-header"><h3><i class="fas fa-history" style="color:var(--accent);margin-right:8px;"></i>Konsultatsiya tarixi</h3></div>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Sana</th><th>Shifokor</th><th>Tashxis</th><th>Turi</th><th>Holat</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>15-may</td><td><strong>Dr. Rahimova D.</strong></td><td>ORVI</td>
+                                <td><span class="badge badge-blue">Video</span></td><td><span class="badge badge-green">Tugallangan</span></td>
+                            </tr>
+                            <tr>
+                                <td>10-may</td><td><strong>Dr. Toshmatov B.</strong></td><td>Ekzema</td>
+                                <td><span class="badge badge-blue">Chat</span></td><td><span class="badge badge-green">Tugallangan</span></td>
+                            </tr>
+                            <tr>
+                                <td>5-may</td><td><strong>Dr. Umarova M.</strong></td><td>Profilaktik</td>
+                                <td><span class="badge badge-blue">Video</span></td><td><span class="badge badge-green">Tugallangan</span></td>
+                            </tr>
+                            <tr>
+                                <td>28-aprel</td><td><strong>Dr. Karimov J.</strong></td><td>Gipertoniya</td>
+                                <td><span class="badge badge-blue">Video</span></td><td><span class="badge badge-green">Tugallangan</span></td>
+                            </tr>
+                            <tr>
+                                <td>15-aprel</td><td><strong>Dr. Nazarova G.</strong></td><td>Konsultatsiya</td>
+                                <td><span class="badge badge-blue">Video</span></td><td><span class="badge badge-green">Tugallangan</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prescriptions Tab -->
+        <div class="tab-content" id="tab-prescriptions" style="display:none;">
+            <div class="card">
+                <div class="card-header"><h3><i class="fas fa-pills" style="color:var(--red);margin-right:8px;"></i>Faol retseptlar</h3></div>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; background:var(--gray-6); border-radius:12px;">
+                        <div style="width:48px;height:48px;border-radius:12px;background:#FEE2E2;display:flex;align-items:center;justify-content:center;color:var(--red);font-size:20px;"><i class="fas fa-capsules"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Amoksitsillin 500mg</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Kuniga 3 marta, ovqatdan keyin | 7 kun</div>
+                        </div>
+                        <span class="badge badge-green">Faol</span>
+                        <div style="text-align:right; font-size:12px; color:var(--gray-2);">
+                            Dr. Rahimova<br>15-may
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; background:var(--gray-6); border-radius:12px;">
+                        <div style="width:48px;height:48px;border-radius:12px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:20px;"><i class="fas fa-prescription-bottle"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Paratsetamol 500mg</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Harorat bo'lganda, kuniga 3 martagacha | Kerak bo'lganda</div>
+                        </div>
+                        <span class="badge badge-green">Faol</span>
+                        <div style="text-align:right; font-size:12px; color:var(--gray-2);">
+                            Dr. Rahimova<br>15-may
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; background:var(--gray-6); border-radius:12px;">
+                        <div style="width:48px;height:48px;border-radius:12px;background:#E6F0FF;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:20px;"><i class="fas fa-tablets"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Enalapril 10mg</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Kuniga 1 marta, ertalab | Doimiy</div>
+                        </div>
+                        <span class="badge badge-green">Faol</span>
+                        <div style="text-align:right; font-size:12px; color:var(--gray-2);">
+                            Dr. Karimov<br>28-aprel
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="tab-content" id="tab-settings" style="display:none;">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-bell" style="color:var(--yellow);margin-right:8px;"></i>Bildirishnomalar</h3></div>
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <label style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:14px;">SMS bildirishnomalar</span>
+                            <input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary);">
+                        </label>
+                        <label style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:14px;">Email bildirishnomalar</span>
+                            <input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary);">
+                        </label>
+                        <label style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:14px;">Telegram bildirishnomalar</span>
+                            <input type="checkbox" style="width:20px;height:20px;accent-color:var(--primary);">
+                        </label>
+                        <label style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+                            <span style="font-size:14px;">Uchrashuv eslatmalari</span>
+                            <input type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary);">
+                        </label>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-shield-alt" style="color:var(--green);margin-right:8px;"></i>Xavfsizlik</h3></div>
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <button class="btn btn-outline btn-block"><i class="fas fa-key"></i> Parolni o'zgartirish</button>
+                        <button class="btn btn-outline btn-block"><i class="fas fa-mobile-alt"></i> Ikki bosqichli tasdiqlash</button>
+                        <button class="btn btn-outline btn-block"><i class="fas fa-download"></i> Ma'lumotlarni yuklab olish</button>
+                        <button class="btn btn-danger btn-block" style="margin-top:12px;"><i class="fas fa-trash"></i> Hisobni o'chirish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+// Mobile menu
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+// Tabs
+document.querySelectorAll('.profile-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+        this.classList.add('active');
+        document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
+    });
+});
+</script>
+</body>
+</html>

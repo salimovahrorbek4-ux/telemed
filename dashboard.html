@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <i class="fas fa-heartbeat"></i>
+            <span>TeleMed<strong>UZ</strong></span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-th-large"></i> Bosh sahifa</a>
+            <a href="doctors.html" class="sidebar-link"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="ai-diagnostika.html" class="sidebar-link"><i class="fas fa-robot"></i> AI Diagnostika</a>
+            <a href="appointment.html" class="sidebar-link"><i class="fas fa-calendar-check"></i> Yozilish <span class="sidebar-badge">2</span></a>
+            <div class="sidebar-section">Boshqa</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Tarix</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-pills"></i> Retseptlar</a>
+            <a href="profile.html" class="sidebar-link"><i class="fas fa-user"></i> Profil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user"></i></div>
+            <div class="sidebar-user-info">
+                <div class="sidebar-user-name">Ahrorbek S.</div>
+                <div class="sidebar-user-role">Bemor</div>
+            </div>
+            <a href="index.html" style="color:var(--gray-3);font-size:16px;" title="Chiqish"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <!-- MAIN -->
+    <main class="main-content">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h1>Assalomu alaykum, Ahrorbek!</h1>
+                <p>Bugungi holatingiz qanday? Sizga qanday yordam bera olamiz?</p>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Shifokor yoki xizmat qidirish...">
+                </div>
+                <div class="topbar-notif">
+                    <i class="fas fa-bell"></i>
+                    <span class="topbar-notif-dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-card-icon blue"><i class="fas fa-calendar-check"></i></div>
+                <div>
+                    <span class="stat-card-value">3</span>
+                    <span class="stat-card-label">Kelgusi uchrashuvlar</span>
+                    <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> 1 yangi</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div>
+                <div>
+                    <span class="stat-card-value">12</span>
+                    <span class="stat-card-label">Tugallangan konsultatsiyalar</span>
+                    <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> +3 bu oy</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon purple"><i class="fas fa-pills"></i></div>
+                <div>
+                    <span class="stat-card-value">5</span>
+                    <span class="stat-card-label">Faol retseptlar</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon orange"><i class="fas fa-heart"></i></div>
+                <div>
+                    <span class="stat-card-value">92%</span>
+                    <span class="stat-card-label">Sog'liq ko'rsatkichi</span>
+                    <span class="stat-card-change up"><i class="fas fa-arrow-up"></i> +5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions + Upcoming -->
+        <div class="grid-2">
+            <!-- Quick Actions -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-bolt" style="color:var(--yellow);margin-right:8px;"></i>Tez harakatlar</h3>
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                    <a href="doctors.html" class="btn btn-outline" style="justify-content:center; flex-direction:column; padding:20px; gap:10px;">
+                        <i class="fas fa-video" style="font-size:24px; color:var(--primary);"></i>
+                        <span style="font-size:13px;">Video konsultatsiya</span>
+                    </a>
+                    <a href="ai-diagnostika.html" class="btn btn-outline" style="justify-content:center; flex-direction:column; padding:20px; gap:10px;">
+                        <i class="fas fa-robot" style="font-size:24px; color:var(--accent);"></i>
+                        <span style="font-size:13px;">AI Diagnostika</span>
+                    </a>
+                    <a href="appointment.html" class="btn btn-outline" style="justify-content:center; flex-direction:column; padding:20px; gap:10px;">
+                        <i class="fas fa-calendar-plus" style="font-size:24px; color:var(--green);"></i>
+                        <span style="font-size:13px;">Yozilish</span>
+                    </a>
+                    <a href="#" class="btn btn-outline" style="justify-content:center; flex-direction:column; padding:20px; gap:10px;">
+                        <i class="fas fa-pills" style="font-size:24px; color:var(--red);"></i>
+                        <span style="font-size:13px;">Dori buyurtma</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><i class="fas fa-calendar" style="color:var(--primary);margin-right:8px;"></i>Kelgusi uchrashuvlar</h3>
+                    <a href="appointment.html" class="form-link" style="font-size:13px;">Barchasi →</a>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div style="display:flex; align-items:center; gap:14px; padding:14px; background:var(--gray-6); border-radius:10px;">
+                        <div style="width:44px;height:44px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;"><i class="fas fa-user-md"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Dr. Karimov Jasur</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Kardiolog</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px;font-weight:600;color:var(--primary);">Bugun</div>
+                            <div style="font-size:12px;color:var(--gray-2);">14:00</div>
+                        </div>
+                        <span class="badge badge-green">Tasdiqlangan</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:14px; padding:14px; background:var(--gray-6); border-radius:10px;">
+                        <div style="width:44px;height:44px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;"><i class="fas fa-user-md"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Dr. Nazarova Gulnora</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Psixolog</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px;font-weight:600;">22-may</div>
+                            <div style="font-size:12px;color:var(--gray-2);">10:30</div>
+                        </div>
+                        <span class="badge badge-yellow">Kutilmoqda</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:14px; padding:14px; background:var(--gray-6); border-radius:10px;">
+                        <div style="width:44px;height:44px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;"><i class="fas fa-user-md"></i></div>
+                        <div style="flex:1;">
+                            <strong style="font-size:14px;">Dr. Aliyev Sardor</strong>
+                            <div style="font-size:12px;color:var(--gray-2);">Nevropatolog</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px;font-weight:600;">25-may</div>
+                            <div style="font-size:12px;color:var(--gray-2);">16:00</div>
+                        </div>
+                        <span class="badge badge-blue">Rejalashtirilgan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent History -->
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fas fa-history" style="color:var(--gray-2);margin-right:8px;"></i>So'nggi konsultatsiyalar</h3>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Shifokor</th>
+                            <th>Mutaxassislik</th>
+                            <th>Sana</th>
+                            <th>Turi</th>
+                            <th>Holat</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dr. Rahimova Dilnoza</strong></td>
+                            <td>Terapevt</td>
+                            <td>15-may, 2026</td>
+                            <td><i class="fas fa-video" style="color:var(--primary);"></i> Video</td>
+                            <td><span class="badge badge-green">Tugallangan</span></td>
+                            <td><a href="#" class="form-link">Ko'rish</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Toshmatov Bobur</strong></td>
+                            <td>Dermatolog</td>
+                            <td>10-may, 2026</td>
+                            <td><i class="fas fa-comment" style="color:var(--accent);"></i> Chat</td>
+                            <td><span class="badge badge-green">Tugallangan</span></td>
+                            <td><a href="#" class="form-link">Ko'rish</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Umarova Madina</strong></td>
+                            <td>Pediatr</td>
+                            <td>5-may, 2026</td>
+                            <td><i class="fas fa-video" style="color:var(--primary);"></i> Video</td>
+                            <td><span class="badge badge-green">Tugallangan</span></td>
+                            <td><a href="#" class="form-link">Ko'rish</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dr. Karimov Jasur</strong></td>
+                            <td>Kardiolog</td>
+                            <td>28-aprel, 2026</td>
+                            <td><i class="fas fa-video" style="color:var(--primary);"></i> Video</td>
+                            <td><span class="badge badge-green">Tugallangan</span></td>
+                            <td><a href="#" class="form-link">Ko'rish</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+const btn = document.getElementById('mobileMenuBtn');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+</script>
+</body>
+</html>

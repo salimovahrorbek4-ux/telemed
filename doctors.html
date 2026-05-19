@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifokorlar — TeleMed UZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo"><i class="fas fa-heartbeat"></i><span>TeleMed<strong>UZ</strong></span></div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link"><i class="fas fa-th-large"></i> Bosh sahifa</a>
+            <a href="doctors.html" class="sidebar-link active"><i class="fas fa-user-md"></i> Shifokorlar</a>
+            <a href="ai-diagnostika.html" class="sidebar-link"><i class="fas fa-robot"></i> AI Diagnostika</a>
+            <a href="appointment.html" class="sidebar-link"><i class="fas fa-calendar-check"></i> Yozilish <span class="sidebar-badge">2</span></a>
+            <div class="sidebar-section">Boshqa</div>
+            <a href="#" class="sidebar-link"><i class="fas fa-file-medical"></i> Tarix</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-pills"></i> Retseptlar</a>
+            <a href="profile.html" class="sidebar-link"><i class="fas fa-user"></i> Profil</a>
+            <a href="#" class="sidebar-link"><i class="fas fa-cog"></i> Sozlamalar</a>
+        </nav>
+        <div class="sidebar-user">
+            <div class="sidebar-user-avatar"><i class="fas fa-user"></i></div>
+            <div class="sidebar-user-info"><div class="sidebar-user-name">Ahrorbek S.</div><div class="sidebar-user-role">Bemor</div></div>
+            <a href="index.html" style="color:var(--gray-3);font-size:16px;"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+
+    <main class="main-content">
+        <div class="topbar">
+            <div class="topbar-left">
+                <h1>Shifokorlar</h1>
+                <p>500+ malakali shifokorlardan birini tanlang</p>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Shifokor qidirish..." id="searchInput">
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="doctors-filter">
+            <button class="filter-btn active" data-filter="all">Barchasi</button>
+            <button class="filter-btn" data-filter="Terapevt">Terapevt</button>
+            <button class="filter-btn" data-filter="Kardiolog">Kardiolog</button>
+            <button class="filter-btn" data-filter="Nevropatolog">Nevropatolog</button>
+            <button class="filter-btn" data-filter="Pediatr">Pediatr</button>
+            <button class="filter-btn" data-filter="Dermatolog">Dermatolog</button>
+            <button class="filter-btn" data-filter="Psixolog">Psixolog</button>
+            <button class="filter-btn" data-filter="Ginekolog">Ginekolog</button>
+        </div>
+
+        <!-- Doctor Cards -->
+        <div id="doctorsList">
+            <div class="doctor-list-card" data-specialty="Kardiolog">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i><div class="doctor-online"></div></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Karimov Jasur</h3>
+                    <span class="doctor-list-specialty">Kardiolog</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 4.9</span>
+                        <span><i class="fas fa-users"></i> 2,340 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 15 yil tajriba</span>
+                        <span><i class="fas fa-clock"></i> Onlayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Yurak-qon tomir kasalliklari bo'yicha mutaxassis. Gipertoniya, aritmiya va yurak yetishmovchiligi davolash.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+
+            <div class="doctor-list-card" data-specialty="Terapevt">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i><div class="doctor-online"></div></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Rahimova Dilnoza</h3>
+                    <span class="doctor-list-specialty">Terapevt</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 4.8</span>
+                        <span><i class="fas fa-users"></i> 3,120 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 12 yil tajriba</span>
+                        <span><i class="fas fa-clock"></i> Onlayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Umumiy amaliyot shifokori. Ichki kasalliklar diagnostikasi va davolash. Profilaktik tekshiruvlar.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+
+            <div class="doctor-list-card" data-specialty="Nevropatolog">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i><div class="doctor-online"></div></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Aliyev Sardor</h3>
+                    <span class="doctor-list-specialty">Nevropatolog</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 4.9</span>
+                        <span><i class="fas fa-users"></i> 1,850 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 18 yil tajriba</span>
+                        <span><i class="fas fa-clock"></i> Onlayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Asab tizimi kasalliklari mutaxassisi. Bosh og'riq, migren, epilepsiya va insult reabilitatsiyasi.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+
+            <div class="doctor-list-card" data-specialty="Pediatr">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Umarova Madina</h3>
+                    <span class="doctor-list-specialty">Pediatr</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 4.7</span>
+                        <span><i class="fas fa-users"></i> 4,200 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 10 yil tajriba</span>
+                        <span style="color:var(--gray-3);"><i class="fas fa-clock"></i> Oflayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Bolalar salomatligi mutaxassisi. Emlash, o'sish va rivojlanish monitoringi, bolalar kasalliklari.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-comment"></i> Chat</button>
+                </div>
+            </div>
+
+            <div class="doctor-list-card" data-specialty="Dermatolog">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i><div class="doctor-online"></div></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Toshmatov Bobur</h3>
+                    <span class="doctor-list-specialty">Dermatolog</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 4.8</span>
+                        <span><i class="fas fa-users"></i> 1,560 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 8 yil tajriba</span>
+                        <span><i class="fas fa-clock"></i> Onlayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Teri kasalliklari mutaxassisi. Allergiya, ekzema, akne va kosmetologiya masalalari.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+
+            <div class="doctor-list-card" data-specialty="Psixolog">
+                <div class="doctor-list-avatar"><i class="fas fa-user-md"></i><div class="doctor-online"></div></div>
+                <div class="doctor-list-info">
+                    <h3>Dr. Nazarova Gulnora</h3>
+                    <span class="doctor-list-specialty">Psixolog</span>
+                    <div class="doctor-list-meta">
+                        <span><i class="fas fa-star star"></i> 5.0</span>
+                        <span><i class="fas fa-users"></i> 980 bemor</span>
+                        <span><i class="fas fa-briefcase"></i> 14 yil tajriba</span>
+                        <span><i class="fas fa-clock"></i> Onlayn</span>
+                    </div>
+                    <p class="doctor-list-desc">Klinik psixolog. Stress, depressiya, anxiyete va oilaviy muammolar bo'yicha konsultatsiya.</p>
+                </div>
+                <div class="doctor-list-actions">
+                    <a href="appointment.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Yozilish</a>
+                    <button class="btn btn-outline btn-sm"><i class="fas fa-video"></i> Video</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+// Mobile menu
+const btn = document.getElementById('mobileMenuBtn'), sidebar = document.getElementById('sidebar'), overlay = document.getElementById('sidebarOverlay');
+btn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); });
+
+// Filters
+document.querySelectorAll('.filter-btn').forEach(b => {
+    b.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        const f = b.dataset.filter;
+        document.querySelectorAll('.doctor-list-card').forEach(c => {
+            c.style.display = (f === 'all' || c.dataset.specialty === f) ? '' : 'none';
+        });
+    });
+});
+
+// Search
+document.getElementById('searchInput').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.doctor-list-card').forEach(c => {
+        c.style.display = c.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+</script>
+</body>
+</html>
